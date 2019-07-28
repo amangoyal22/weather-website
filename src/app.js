@@ -10,6 +10,7 @@ const forcast = require('./utils/forcast.js')
 const publicDirec = path.join(__dirname,'../public')
 const viewPath = path.join(__dirname,'../templates/views')
 const partialPath = path.join(__dirname,'../templates/partials')
+const port = process.env.PORT || 3000
 
 //Setup for handle bars
 app.set('view engine','hbs')
@@ -90,7 +91,7 @@ app.get('*',(req,res)=>{
     res.send("MY 404 page")
 })
 
-app.listen(3001,() => {
-    console.log('server is up')
+app.listen(port,() => {
+    console.log('server is up on' + port)
 } )
 
